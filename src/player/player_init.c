@@ -10,9 +10,9 @@
 player_t *init_player(void)
 {
     player_t *player = my_alloc(sizeof(player_t), NULL);
+
     if (!player)
         return NULL;
-
     player->pos.x = 2.0f;
     player->pos.y = 2.0f;
     player->angle = 0.0f;

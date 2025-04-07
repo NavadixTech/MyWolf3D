@@ -11,9 +11,9 @@
 static int **create_grid(int w, int h, memory_t **list)
 {
     int **grid = my_alloc(sizeof(int *) * h, list);
+
     if (!grid)
         return NULL;
-
     for (int i = 0; i < h; i++) {
         grid[i] = my_alloc(sizeof(int) * w, list);
         if (!grid[i])
@@ -27,9 +27,9 @@ static int **create_grid(int w, int h, memory_t **list)
 map_t *init_map(int width, int height)
 {
     map_t *map = my_alloc(sizeof(map_t), NULL);
+
     if (!map)
         return NULL;
-
     map->width = width;
     map->height = height;
     map->mem_list = NULL;

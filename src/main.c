@@ -11,11 +11,11 @@
 int main(void)
 {
     game_t *game = init_game();
+
     if (!game) {
         fprintf(stderr, "Error: Failed to initialize game\n");
         return 84;
     }
-
     while (sfRenderWindow_isOpen(game->window)) {
         update_window(game);
         render_floor_ceiling(game);

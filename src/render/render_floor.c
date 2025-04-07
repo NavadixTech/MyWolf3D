@@ -16,10 +16,8 @@ void render_floor_ceiling(game_t *game)
     sfRectangleShape_setFillColor(rect, sfColor_fromRGB(50, 50, 50));
     sfRectangleShape_setPosition(rect, (sfVector2f){0, 0});
     sfRenderWindow_drawRectangleShape(game->window, rect, NULL);
-
     sfRectangleShape_setPosition(rect, (sfVector2f){0, 300});
     sfRectangleShape_setFillColor(rect, sfColor_fromRGB(100, 100, 100));
     sfRenderWindow_drawRectangleShape(game->window, rect, NULL);
-
     sfRectangleShape_destroy(rect);
 }
