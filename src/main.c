@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2025
-** new_wolf
+** MyWolf3D
 ** File description:
 ** main
 */
@@ -20,6 +20,8 @@ int main(void)
         update_window(game);
         render_floor_ceiling(game);
         render_walls(game);
+        if (game->editor_mode)
+            render_grid(game);
         sfRenderWindow_display(game->window);
     }
     free_all(&game->mem_list);

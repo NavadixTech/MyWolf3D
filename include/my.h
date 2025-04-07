@@ -1,11 +1,21 @@
+/*
+** EPITECH PROJECT, 2025
+** MyWolf3D
+** File description:
+** my
+*/
+
 #ifndef MY_H_
-    #define MY_H_
+#define MY_H_
 
-    #include <SFML/Graphics.h>
-    #include <stdlib.h>
-    #include <stdbool.h>
-    #include <math.h>
+#include <SFML/Graphics.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <math.h>
 
+#define GRID_SIZE 32 // Taille d'une cellule en pixels
+
+// Structures (inchangées)
 typedef struct s_memory {
     void *ptr;
     struct s_memory *next;
@@ -35,6 +45,7 @@ typedef struct s_game {
     bool editor_mode;
 } game_t;
 
+// Prototypes
 game_t *init_game(void);
 void update_window(game_t *game);
 player_t *init_player(void);
@@ -46,5 +57,6 @@ void *my_alloc(size_t size, memory_t **list);
 void free_all(memory_t **list);
 void render_walls(game_t *game);
 void render_floor_ceiling(game_t *game);
+void render_grid(game_t *game); // Ajouté
 
 #endif

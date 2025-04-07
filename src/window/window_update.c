@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2025
-** new_wolf
+** MyWolf3D
 ** File description:
 ** window_update
 */
@@ -17,6 +17,8 @@ static void handle_movement(game_t *game, sfEvent *event)
         move_player(game->player, game->map, sfKeyA);
     if (event->key.code == sfKeyD)
         move_player(game->player, game->map, sfKeyD);
+    if (event->key.code == sfKeyE)
+        game->editor_mode = !game->editor_mode;
 }
 
 void update_window(game_t *game)
@@ -27,5 +29,7 @@ void update_window(game_t *game)
             sfRenderWindow_close(game->window);
         if (event.type == sfEvtKeyPressed)
             handle_movement(game, &event);
+        if (game->editor_mode && event.type == sfEvtMouseButtonPressed)
+            edit_map(game->map, sfMouse_getPositionRenderWindow(game->window), 1);
     }
 }
