@@ -21,7 +21,7 @@ static float cast_ray(player_t *p, map_t *m, float angle)
         ray_x += dx * 0.1f;
         ray_y += dy * 0.1f;
     }
-    return 100.0f; // Distance max si pas de mur
+    return 100.0f;
 }
 
 static void draw_wall_slice(game_t *game, int x, float height)

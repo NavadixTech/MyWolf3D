@@ -13,7 +13,7 @@ void edit_map(map_t *map, sfVector2i pos, int value)
     int grid_y = pos.y / GRID_SIZE;
 
     if (grid_x >= 0 && grid_x < map->width && grid_y >= 0 && grid_y < map->height) {
-        map->grid[grid_y][grid_x] = value; // 1 pour mur, 0 pour vide
+        map->grid[grid_y][grid_x] = value;
     }
 }
 

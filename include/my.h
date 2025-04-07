@@ -6,16 +6,15 @@
 */
 
 #ifndef MY_H_
-#define MY_H_
+    #define MY_H_
 
-#include <SFML/Graphics.h>
-#include <stdlib.h>
-#include <stdbool.h>
-#include <math.h>
+    #include <SFML/Graphics.h>
+    #include <stdlib.h>
+    #include <stdbool.h>
+    #include <math.h>
 
-#define GRID_SIZE 32 // Taille d'une cellule en pixels
+    #define GRID_SIZE 32
 
-// Structures (inchangées)
 typedef struct s_memory {
     void *ptr;
     struct s_memory *next;
@@ -57,6 +56,5 @@ void *my_alloc(size_t size, memory_t **list);
 void free_all(memory_t **list);
 void render_walls(game_t *game);
 void render_floor_ceiling(game_t *game);
-void render_grid(game_t *game); // Ajouté
-
+void render_grid(game_t *game);
 #endif
