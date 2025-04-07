@@ -1,6 +1,6 @@
 ##
 ## EPITECH PROJECT, 2025
-## new_wolf
+## MyWolf3D
 ## File description:
 ## Makefile
 ##

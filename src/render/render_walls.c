@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2025
-** new_wolf
+** MyWolf3D
 ** File description:
 ** render_walls
 */
@@ -29,10 +29,17 @@ static void draw_wall_slice(game_t *game, int x, float height)
     sfRectangleShape *slice = sfRectangleShape_create();
     sfVector2f size = {1, height};
     sfVector2f pos = {x, 300 - height / 2};
+    sfVector2u tex_size;
 
     sfRectangleShape_setSize(slice, size);
     sfRectangleShape_setPosition(slice, pos);
-    sfRectangleShape_setFillColor(slice, sfColor_fromRGB(150, 150, 150));
+    if (game->map->wall_tex) {
+        tex_size = sfTexture_getSize(game->map->wall_tex);
+        sfRectangleShape_setTexture(slice, game->map->wall_tex, sfTrue);
+        sfRectangleShape_setTextureRect(slice, (sfIntRect){x % tex_size.x, 0, 1, tex_size.y});
+    } else {
+        sfRectangleShape_setFillColor(slice, sfColor_fromRGB(150, 150, 150));
+    }
     sfRenderWindow_drawRectangleShape(game->window, slice, NULL);
     sfRectangleShape_destroy(slice);
 }

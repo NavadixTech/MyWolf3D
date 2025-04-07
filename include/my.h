@@ -12,6 +12,7 @@
     #include <stdlib.h>
     #include <stdbool.h>
     #include <math.h>
+    #include <stdio.h>
 
     #define GRID_SIZE 32
 
@@ -44,7 +45,6 @@ typedef struct s_game {
     bool editor_mode;
 } game_t;
 
-// Prototypes
 game_t *init_game(void);
 void update_window(game_t *game);
 player_t *init_player(void);
@@ -56,5 +56,6 @@ void *my_alloc(size_t size, memory_t **list);
 void free_all(memory_t **list);
 void render_walls(game_t *game);
 void render_floor_ceiling(game_t *game);
+int load_textures(map_t *map);
 void render_grid(game_t *game);
 #endif
